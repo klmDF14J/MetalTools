@@ -9,7 +9,7 @@ public class Config {
 	/**
 	 * Item ID's
 	 */
-	public static int hammerWood, hammerStone, hammerIron, hammerGold, hammerDiamond;
+	public static int hammerWood, hammerStone, hammerIron, hammerGold, hammerDiamond, hammerSmelting;
 	
 	/**
 	 * Block ID's
@@ -25,6 +25,7 @@ public class Config {
 		hammerIron = config.getItem("Iron Hammer", 8002).getInt() - 256;
 		hammerGold = config.getItem("Gold Hammer", 8003).getInt() - 256;
 		hammerDiamond = config.getItem("Diamond Hammer", 8004).getInt() - 256;
+		hammerSmelting = config.getItem("Smelting Hammer", 8005).getInt() - 256;
 		
 		config.save();
 	}

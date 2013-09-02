@@ -4,8 +4,11 @@ import java.util.List;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import metalTools.Config;
 import metalTools.MetalTools;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.particle.EffectRenderer;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -72,7 +75,14 @@ public class ItemHammer extends ItemTool {
 					
 					if(stack != null && stack.itemID != Block.tallGrass.blockID && stack.itemID != Block.bedrock.blockID) {
 						if(stack.itemID < Block.blocksList.length && stack.itemID != 0) {
-							stack.itemID = Block.blocksList[stack.itemID].idDropped(0, world.rand, 0);
+							if(itemID == Items.hammerSmelting.itemID) {
+								if(stack.itemID == Block.stone.blockID) {
+									stack.itemID = Block.stone.blockID;
+								}
+							}
+							else {
+								stack.itemID = Block.blocksList[stack.itemID].idDropped(0, world.rand, 0);
+							}
 						}
 						
 						if(stack != null && stack.itemID != 0) {
