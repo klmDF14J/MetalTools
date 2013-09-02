@@ -38,11 +38,10 @@ public class ItemHammer extends ItemTool {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List list, boolean par4) {
-		list.add(radius + " X " + radius);
+		list.add("Destroys blocks in a " + radius + "x" + radius + " area");
 	}
 	
 	private void destroy(World world, int x, int y, int z, int side) {
-		System.out.println("Destroyed side: " + side);
 		int val = (radius - 1) / 2;
 		for(int i = 0; i < radius; i++) {
 			for(int j = 0; j < radius; j++) {
@@ -51,21 +50,27 @@ public class ItemHammer extends ItemTool {
 					ItemStack stack = null;
 					if(side == 0 || side == 1) {
 						stack = new ItemStack(world.getBlockId((x - val) + i, y, (z - val) + j), 1, world.getBlockMetadata((x - val) + i, y, (z - val) + j));
-						world.setBlockToAir((x - val) + i, y, (z - val) + j);
+						if(stack.itemID != Block.bedrock.blockID) {
+							world.setBlockToAir((x - val) + i, y, (z - val) + j);
+						}
 						ei = new EntityItem(world, (x - val) + i, y, (z - val) + j, stack);
 					}
 					if(side == 2 || side == 3) {
 						stack = new ItemStack(world.getBlockId((x - val) + i, (y - val) + j, z), 1, world.getBlockMetadata((x - val) + i, (y - val) + j, z));
-						world.setBlockToAir((x - val) + i, (y - val) + j, z);
+						if(stack.itemID != Block.bedrock.blockID) {
+							world.setBlockToAir((x - val) + i, (y - val) + j, z);
+						}
 						ei = new EntityItem(world, (x - val) + i, (y - val) + j, z, stack);
 					}
 					if(side == 4 || side == 5) {
 						stack = new ItemStack(world.getBlockId(x, (y - val) + i, (z - val) + j), 1, world.getBlockMetadata(x, (y - val) + i, (z - val) + j));
-						world.setBlockToAir(x, (y - val) + i, (z - val) + j);
+						if(stack.itemID != Block.bedrock.blockID) { 
+							world.setBlockToAir(x, (y - val) + i, (z - val) + j);
+						}
 						ei = new EntityItem(world, x, (y - val) + i, (z - val) + j, stack);
 					}
 					
-					if(stack.itemID != Block.tallGrass.blockID) {
+					if(stack != null && stack.itemID != Block.tallGrass.blockID && stack.itemID != Block.bedrock.blockID) {
 						if(stack.itemID < Block.blocksList.length && stack.itemID != 0) {
 							stack.itemID = Block.blocksList[stack.itemID].idDropped(0, world.rand, 0);
 						}
