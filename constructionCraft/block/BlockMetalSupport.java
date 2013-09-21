@@ -37,7 +37,7 @@ public class BlockMetalSupport extends Block {
 
 	public void registerIcons(IconRegister iconRegistry) {
 		for (int i = 0; i < 47; i++)
-			textures[i] = iconRegistry.registerIcon(ConstructionCraft.modid + ":/support/woodGlass_" + (i + 1));
+			textures[i] = iconRegistry.registerIcon(ConstructionCraft.modid + ":/support/metalSupport_" + (i + 1));
 	}
 
 	public Icon getBlockTexture(IBlockAccess world, int x, int y, int z,
