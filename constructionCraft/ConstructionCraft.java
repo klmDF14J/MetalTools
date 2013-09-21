@@ -5,6 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 
+import mods.railcraft.api.fuel.FuelManager;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumToolMaterial;
@@ -99,6 +100,12 @@ public class ConstructionCraft implements IPlayerTracker {
 			@Override
 			public void load() {
 				RecipeManagers.squeezerManager.addRecipe(2, new ItemStack[] { new ItemStack(Items.concreteBucket) }, new FluidStack(Blocks.concreteFluid, 1000));
+			}
+		});
+		
+		modules.add(new Module("Railcraft") {
+			public void load() {
+				
 			}
 		});
 	}
