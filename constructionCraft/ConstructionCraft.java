@@ -108,6 +108,18 @@ public class ConstructionCraft implements IPlayerTracker {
 				
 			}
 		});
+		
+		modules.add(new Module("ComputerCraft") {
+			public void load() {
+				
+			}
+		});
+		
+		modules.add(new Module("Buildcraft") {
+			public void load() {
+				
+			}
+		});
 	}
 
 	@EventHandler
