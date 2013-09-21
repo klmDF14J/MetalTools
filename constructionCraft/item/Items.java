@@ -62,10 +62,10 @@ public class Items {
 		});
 	}
 	
-	/*private static Item createBasicItem(Class c, int id) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+	private static Item createBasicItem(Class c, int id) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		Constructor<?> ct = c.getConstructor(int.class);
 		return (Item) ct.newInstance(id);
-	}*/
+	}
 	
 	private static void addName(Item i, String name) {
 		LanguageRegistry.addName(i, name);
