@@ -42,6 +42,8 @@ public class Items {
 		for(int i = 0; i < 3; i++) {
 			LanguageRegistry.addName(new ItemStack(handle, 1, i), handles[i] + " Handle");
 		}
+		
+		LanguageRegistry.addName(concreteBucket, "Bucket Of Concrete");
 	}
 	
 	
