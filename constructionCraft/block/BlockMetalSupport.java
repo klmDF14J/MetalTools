@@ -35,9 +35,26 @@ public class BlockMetalSupport extends Block {
 		setHardness(0.5F);
 	}
 
+	@Override
+	public boolean isOpaqueCube() {
+		return false;
+	}
+
+	public boolean renderAsNormalBlock() {
+		return false;
+	}
+
+	public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess,
+		int par2, int par3, int par4, int par5) {
+		int i1 = par1IBlockAccess.getBlockId(par2, par3, par4);
+		boolean flag = false;
+		return !flag && i1 == this.blockID ? false : super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, par5);
+	}
+
 	public void registerIcons(IconRegister iconRegistry) {
 		for (int i = 0; i < 47; i++)
-			textures[i] = iconRegistry.registerIcon(ConstructionCraft.modid + ":/support/metalSupport_" + (i + 1));
+			textures[i] = iconRegistry.registerIcon(ConstructionCraft.modid
+					+ ":/support/metalSupport_" + (i + 1));
 	}
 
 	public Icon getBlockTexture(IBlockAccess world, int x, int y, int z,
@@ -78,10 +95,14 @@ public class BlockMetalSupport extends Block {
 		int idBuilder = 0;
 
 		for (int i = 0; i <= 7; i++) {
-			idBuilder = idBuilder + (bitMatrix[i] ? (i == 0 ? 1 : (i == 1 ? 2 : (i == 2 ? 4 : (i == 3 ? 8 : (i == 4 ? 16 : (i == 5 ? 32 : (i == 6 ? 64 : 128))))))) : 0);
+			idBuilder = idBuilder
+					+ (bitMatrix[i] ? (i == 0 ? 1 : (i == 1 ? 2 : (i == 2 ? 4
+							: (i == 3 ? 8 : (i == 4 ? 16 : (i == 5 ? 32
+									: (i == 6 ? 64 : 128))))))) : 0);
 		}
-		
-		return idBuilder > 255 || idBuilder < 0 ? textures[0] : textures[textureRefByID[idBuilder]];
+
+		return idBuilder > 255 || idBuilder < 0 ? textures[0]
+				: textures[textureRefByID[idBuilder]];
 	}
 
 	public Icon getIcon(int side, int meta) {
