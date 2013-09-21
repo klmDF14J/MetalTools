@@ -105,19 +105,19 @@ public class ConstructionCraft implements IPlayerTracker {
 		
 		modules.add(new Module("Railcraft") {
 			public void load() {
-				
+				//Concrete Mixer Cart
 			}
 		});
 		
 		modules.add(new Module("ComputerCraft") {
 			public void load() {
-				
+				//Peripherals for the concrete mixer
 			}
 		});
 		
 		modules.add(new Module("Buildcraft") {
 			public void load() {
-				
+				//Special pipes to cope with concrete
 			}
 		});
 	}
