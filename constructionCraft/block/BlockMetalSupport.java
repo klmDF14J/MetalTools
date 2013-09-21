@@ -13,7 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 import net.minecraft.world.IBlockAccess;
 
-public class BlockMetalSupport extends BlockGlass {
+public class BlockMetalSupport extends Block {
 	public static Icon[] textures = new Icon[47];
 	public static int[] textureRefByID = { 0, 0, 6, 6, 0, 0, 6, 6, 3, 3, 19,
 			15, 3, 3, 19, 15, 1, 1, 18, 18, 1, 1, 13, 13, 2, 2, 23, 31, 2, 2,
@@ -31,7 +31,7 @@ public class BlockMetalSupport extends BlockGlass {
 			7, 7, 24, 24, 7, 7, 10, 10, 8, 8, 36, 35, 8, 8, 34, 11 };
 
 	public BlockMetalSupport(int id) {
-		super(id, Material.glass, false);
+		super(id, Material.rock);
 		setHardness(0.5F);
 	}
 
@@ -77,14 +77,11 @@ public class BlockMetalSupport extends BlockGlass {
 
 		int idBuilder = 0;
 
-		for (int i = 0; i <= 7; i++)
-			idBuilder = idBuilder
-					+ (bitMatrix[i] ? (i == 0 ? 1 : (i == 1 ? 2 : (i == 2 ? 4
-							: (i == 3 ? 8 : (i == 4 ? 16 : (i == 5 ? 32
-									: (i == 6 ? 64 : 128))))))) : 0);
-
-		return idBuilder > 255 || idBuilder < 0 ? textures[0]
-				: textures[textureRefByID[idBuilder]];
+		for (int i = 0; i <= 7; i++) {
+			idBuilder = idBuilder + (bitMatrix[i] ? (i == 0 ? 1 : (i == 1 ? 2 : (i == 2 ? 4 : (i == 3 ? 8 : (i == 4 ? 16 : (i == 5 ? 32 : (i == 6 ? 64 : 128))))))) : 0);
+		}
+		
+		return idBuilder > 255 || idBuilder < 0 ? textures[0] : textures[textureRefByID[idBuilder]];
 	}
 
 	public Icon getIcon(int side, int meta) {
