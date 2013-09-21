@@ -43,7 +43,7 @@ public class Items {
 			LanguageRegistry.addName(new ItemStack(handle, 1, i), handles[i] + " Handle");
 		}
 		
-		LanguageRegistry.addName(concreteBucket, "Bucket Of Concrete");
+		LanguageRegistry.addName(concreteBucket, "Concrete Bucket");
 	}
 	
 	
