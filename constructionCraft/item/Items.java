@@ -50,6 +50,14 @@ public class Items {
 			"LSL",
 			"LSL", 'L', Item.leather, 'S', Item.stick
 		});
+		GameRegistry.addRecipe(new ItemStack(handle, 1, 1), new Object[] {
+			"LSL",
+			"LSL", 'L', Item.ingotIron, 'S', Item.stick
+		});
+		GameRegistry.addRecipe(new ItemStack(handle, 1, 2), new Object[] {
+			"DSE",
+			"LSL", 'L', Item.ingotGold, 'S', Item.stick, 'D', Item.diamond, 'E', Item.emerald
+		});
 	}
 	
 	private static Item createBasicItem(Class c, int id) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
