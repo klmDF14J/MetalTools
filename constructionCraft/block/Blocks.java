@@ -16,7 +16,7 @@ public class Blocks {
 		concreteFluid = new ConcreteFluid();
 		concreteFluidBlock = new BlockConcreteFluid(Config.concreteFluidBlock);
 		concrete = new BasicBlock(Config.concrete).setCreativeTab(ConstructionCraft.tools).setTextureName(ConstructionCraft.modid + ":concrete");
-		metalSupport = new BlockSupport(Config.metalSupport).setCreativeTab(ConstructionCraft.tools).setTextureName(ConstructionCraft.modid + ":supportNormal");
+		metalSupport = new BlockMetalSupport(Config.metalSupport).setCreativeTab(ConstructionCraft.tools).setTextureName(ConstructionCraft.modid + ":supportNormal");
 		blacksmithTable = new BlockBlacksmithTable(Config.blacksmithTable);
 	}
 	
