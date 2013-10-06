@@ -1,6 +1,7 @@
-package cc.client.gui;
+package cc.block.container;
 
 import cc.block.tileentity.TileEntityConcreteMixer;
+import cc.client.gui.ConcreteMixerRecipes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;

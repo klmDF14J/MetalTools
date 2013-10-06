@@ -5,6 +5,7 @@ import cc.ConstructionCraft;
 import cc.block.tileentity.TileEntityConcreteMixer;
 import cc.item.ItemColouredStoneSet;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -12,52 +13,52 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class Blocks
 {
-    public static Fluid concreteFluid;
-    public static Block concrete, reinforcedGlass, blacksmithTable, concreteFluidBlock, whiteStone, blackStone, ironPlate, wormhole, concreteMixer, concreteMixerOn;
+    public static Fluid cementFluid;
+    public static Block cement, reinforcedGlass, blacksmithTable, cementFluidBlock, whiteStone, blackStone, ironPlate, wormhole, cementMixer, cementMixerOn;
 
     public static String[] types = {"Stone", "Brick", "Smooth Brick"};
 
     private static void create()
     {
-        concreteFluid = new ConcreteFluid();
-        concreteFluidBlock = new BlockConcreteFluid(Config.concreteFluidBlock);
-        concrete = new BasicBlock(Config.concrete).setCreativeTab(ConstructionCraft.blocks).setTextureName(ConstructionCraft.modid + ":concrete");
+        cementFluid = new CementFluid();
+        cementFluidBlock = new BlockCementFluid(Config.cementFluidBlock);
+        cement = new BasicBlock(Config.cement).setCreativeTab(ConstructionCraft.blocks).setTextureName(ConstructionCraft.modid + ":concrete");
         reinforcedGlass = new BlockMetalSupport(Config.reinforcedGlass).setCreativeTab(ConstructionCraft.blocks);
         blacksmithTable = new BlockBlacksmithTable(Config.blacksmithTable);
         whiteStone = new BlockColouredStoneSet(Config.whiteStoneSet, "white");
         blackStone = new BlockColouredStoneSet(Config.blackStoneSet, "black");
         ironPlate = new BlockMetalPlate(Config.ironPlate).setCreativeTab(ConstructionCraft.blocks);
         wormhole = new BlockWormhole(Config.wormhole);
-        concreteMixer = new BlockConcreteMixer(Config.concreteMixer, false);
-        concreteMixerOn = new BlockConcreteMixer(Config.concreteMixerOn, true);
+        cementMixer = new BlockConcreteMixer(Config.cementMixer, false);
+        cementMixerOn = new BlockConcreteMixer(Config.cementMixerOn, true);
     }
 
     private static void register()
     {
-        GameRegistry.registerBlock(concrete, "concrete");
+        GameRegistry.registerBlock(cement, "concrete");
         GameRegistry.registerBlock(reinforcedGlass, "reinforcedGlass");
         GameRegistry.registerBlock(blacksmithTable, "blacksmithTable");
-        GameRegistry.registerBlock(concreteFluidBlock, "concreteFluidBlock");
+        GameRegistry.registerBlock(cementFluidBlock, "concreteFluidBlock");
         GameRegistry.registerBlock(whiteStone, ItemColouredStoneSet.class, "whiteStoneSet");
         GameRegistry.registerBlock(blackStone, ItemColouredStoneSet.class, "blackStoneSet");
         GameRegistry.registerBlock(ironPlate, "ironPlate");
         GameRegistry.registerBlock(wormhole, "wormhole");
-        GameRegistry.registerBlock(concreteMixer, "concreteMixer");
-        GameRegistry.registerBlock(concreteMixerOn, "concreteMixerOn");
+        GameRegistry.registerBlock(cementMixer, "concreteMixer");
+        GameRegistry.registerBlock(cementMixerOn, "concreteMixerOn");
         
         GameRegistry.registerTileEntity(TileEntityConcreteMixer.class, "tileEntityConcreteMixer");
     }
 
     private static void name()
     {
-        LanguageRegistry.addName(concrete, "Concrete Block");
+        LanguageRegistry.addName(cement, "Cement Block");
         LanguageRegistry.addName(reinforcedGlass, "Reinforced Glass");
         LanguageRegistry.addName(blacksmithTable, "Blacksmith Table");
-        LanguageRegistry.addName(concreteFluidBlock, "Liquid Concrete");
+        LanguageRegistry.addName(cementFluidBlock, "Liquid Cement");
         LanguageRegistry.addName(ironPlate, "Iron Plate");
         LanguageRegistry.addName(wormhole, "Wormhole");
-        LanguageRegistry.addName(concreteMixer, "Concrete Mixer");
-        LanguageRegistry.addName(concreteMixerOn, "Concrete Mixer Active");
+        LanguageRegistry.addName(cementMixer, "Cement Mixer");
+        LanguageRegistry.addName(cementMixerOn, "Cement Mixer Active");
 
         for (int i = 0; i < BlockColouredStoneSet.numTypes; i++)
         {

@@ -59,6 +59,10 @@ public class BlacksmithCraftingManager {
 		addRecipe(new ItemStack(Blocks.reinforcedGlass, 8), new Object[] {
 			"XXX", "XYX", "XXX", 'X', Block.glass, 'Y', Block.fenceIron
 		});
+		
+		addRecipe(new ItemStack(Blocks.ironPlate, 4), new Object[] {
+			"XX", "XX", 'X', Block.blockIron
+		});
 
 		Collections.sort(this.recipes, new BlacksmithRecipeSorter(this));
 	}

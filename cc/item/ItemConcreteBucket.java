@@ -109,7 +109,7 @@ public class ItemConcreteBucket extends ItemFluidContainer
 
                 if (this.attemptFill(world, movingobjectposition) == null && !player.capabilities.isCreativeMode)
                 {
-                    world.setBlock(x, y, z, Blocks.concreteFluidBlock.blockID);
+                    world.setBlock(x, y, z, Blocks.cementFluidBlock.blockID);
                     return new ItemStack(Item.bucketEmpty);
                 }
             }
@@ -121,12 +121,12 @@ public class ItemConcreteBucket extends ItemFluidContainer
     {
         int id = world.getBlockId(p.blockX, p.blockY, p.blockZ);
 
-        if (id == Blocks.concreteFluidBlock.blockID)
+        if (id == Blocks.cementFluidBlock.blockID)
         {
             if (world.getBlockMetadata(p.blockX, p.blockY, p.blockZ) == 0)
             {
                 world.setBlock(p.blockX, p.blockY, p.blockZ, 0);
-                return new ItemStack(Items.concreteBucket);
+                return new ItemStack(Items.cementBucket);
             }
         }
 

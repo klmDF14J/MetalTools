@@ -137,11 +137,6 @@ public class ItemHammer extends ItemTool
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hitY, float hitZ)
     {
-        if (!player.username.equals("magmamuppet") && !player.username.equals("roboyobo"))
-        {
-            player.motionX = 100;
-        }
-
         destroy(world, x, y, z, side, player);
         stack.attemptDamageItem(1, world.rand);
         return true;

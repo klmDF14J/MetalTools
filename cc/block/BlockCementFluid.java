@@ -17,12 +17,12 @@ import net.minecraftforge.fluids.BlockFluidClassic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockConcreteFluid extends BlockFluidClassic
+public class BlockCementFluid extends BlockFluidClassic
 {
-    public BlockConcreteFluid(int id)
+    public BlockCementFluid(int id)
     {
-        super(id, Blocks.concreteFluid, Material.water);
-        Blocks.concreteFluid.setBlockID(id);
+        super(id, Blocks.cementFluid, Material.water);
+        Blocks.cementFluid.setBlockID(id);
         setTickRandomly(true);
         setUnlocalizedName("" + Items.lastNum++);
     }

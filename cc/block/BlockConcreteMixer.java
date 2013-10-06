@@ -52,7 +52,7 @@ public class BlockConcreteMixer extends BlockContainer
         super(par1, Material.rock);
         this.isActive = par2;
         
-        setCreativeTab(ConstructionCraft.blocks);
+        if(!this.isActive) { setCreativeTab(ConstructionCraft.blocks); }
         setUnlocalizedName("" + Items.lastNum++);
     }
 
@@ -61,11 +61,11 @@ public class BlockConcreteMixer extends BlockContainer
      */
     public int idDropped(int par1, Random par2Random, int par3)
     {
-        return Blocks.concreteMixer.blockID;
+        return Blocks.cementMixer.blockID;
     }
     
     public int idPicked(World par1World, int par2, int par3, int par4) {
-    	return Blocks.concreteMixer.blockID;
+    	return Blocks.cementMixer.blockID;
     }
     
     /**
@@ -80,7 +80,7 @@ public class BlockConcreteMixer extends BlockContainer
     /**
      * set a blocks direction
      */
-    private void setDefaultDirection(World par1World, int par2, int par3, int par4)
+    public void setDefaultDirection(World par1World, int par2, int par3, int par4)
     {
         if (!par1World.isRemote)
         {
@@ -170,11 +170,11 @@ public class BlockConcreteMixer extends BlockContainer
 
         if (par0)
         {
-            par1World.setBlock(par2, par3, par4, Blocks.concreteMixerOn.blockID);
+            par1World.setBlock(par2, par3, par4, Blocks.cementMixerOn.blockID);
         }
         else
         {
-            par1World.setBlock(par2, par3, par4, Blocks.concreteMixer.blockID);
+            par1World.setBlock(par2, par3, par4, Blocks.cementMixer.blockID);
         }
 
         keepFurnaceInventory = false;

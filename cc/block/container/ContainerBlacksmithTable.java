@@ -1,5 +1,6 @@
-package cc.client.gui;
+package cc.block.container;
 
+import cc.client.gui.BlacksmithCraftingManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;

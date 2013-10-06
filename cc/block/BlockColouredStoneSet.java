@@ -8,6 +8,7 @@ import cc.item.Items;
 
 
 
+import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -28,6 +29,10 @@ public class BlockColouredStoneSet extends Block
         super(id, Material.rock);
         setCreativeTab(ConstructionCraft.blocks);
         this.colour = colour;
+        
+        GameRegistry.addRecipe(new ItemStack(this.blockID, 4, 1), new Object[] {
+        	"XX", "XX", 'X', new ItemStack(this.blockID, 1, 0)
+        });
     }
 
     @SideOnly(Side.CLIENT)

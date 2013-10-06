@@ -1,6 +1,8 @@
 package cc.client.gui;
 
 import cc.ConstructionCraft;
+import cc.block.container.ContainerBlacksmithTable;
+import cc.block.container.ContainerConcreteMixer;
 import cc.block.tileentity.TileEntityConcreteMixer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.ContainerWorkbench;

@@ -35,7 +35,7 @@ public class ConcreteMixerRecipes
 
     private ConcreteMixerRecipes()
     {
-        this.addSmelting(Block.blockClay.blockID, new ItemStack(Items.concreteBucket), 0.7F);
+        this.addSmelting(Block.blockClay.blockID, new ItemStack(Items.cementBucket), 0.7F);
     }
 
     /**

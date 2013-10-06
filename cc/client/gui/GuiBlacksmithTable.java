@@ -11,6 +11,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 
+import cc.block.container.ContainerBlacksmithTable;
+
 @SideOnly(Side.CLIENT)
 public class GuiBlacksmithTable extends GuiContainer
 {

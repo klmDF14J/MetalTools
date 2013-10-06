@@ -3,9 +3,9 @@ package cc.block;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
-public class ConcreteFluid extends Fluid
+public class CementFluid extends Fluid
 {
-    public ConcreteFluid()
+    public CementFluid()
     {
         super("ConcreteFluid");
         setDensity(1);

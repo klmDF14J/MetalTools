@@ -22,7 +22,7 @@ public class Items
 {
     public static ArrayList<Hammer> hammers;
 
-    public static Item handle, concreteBucket, concreteMixerItem;
+    public static Item handle, cementBucket, cementMixerItem;
 
     public static int lastNum;
     public static int lastHammerID;
@@ -34,9 +34,10 @@ public class Items
             hammers.get(i).createItem();
         }
 
+        
         handle = new ItemHandle(Config.handle);
-        concreteBucket = new ItemConcreteBucket(Config.concreteBucket);
-        //concreteMixerItem = new BasicItem(Config.concreteMixerItem).setTextureName(ConstructionCraft.modid + ":concreteMixer").setCreativeTab(ConstructionCraft.tools);
+        cementBucket = new ItemConcreteBucket(Config.cementBucket);
+        cementMixerItem = new BasicItem(Config.cementMixerItem).setTextureName(ConstructionCraft.modid + ":concreteMixer").setCreativeTab(ConstructionCraft.tools);
     }
 
     private static void name()
@@ -53,13 +54,15 @@ public class Items
             LanguageRegistry.addName(new ItemStack(handle, 1, i), handles[i] + " Handle");
         }
 
-        LanguageRegistry.addName(concreteBucket, "Concrete Bucket");
-        //LanguageRegistry.addName(concreteMixerItem, "Concrete Mixer");
+        LanguageRegistry.addName(cementBucket, "Cement Bucket");
+        LanguageRegistry.addName(cementMixerItem, "Cement Mixer");
     }
 
     private static void addRecipes()
     {
-       
+    	GameRegistry.addRecipe(new ItemStack(cementMixerItem), new Object[] {
+    		"XYX", "CAC", "ZBZ", 'X', new ItemStack(Block.cloth, 1, 4), 'Y', new ItemStack(Block.cloth, 1, 15), 'Z', new ItemStack(Block.cloth, 1, 1), 'A', Block.dispenser, 'B', Item.redstone, 'C', Block.pistonBase
+    	});
     }
 
     private static Item createBasicItem(Class c, int id) throws NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException

@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import cc.ConstructionCraft;
+import cc.block.container.ContainerConcreteMixer;
 import cc.block.tileentity.TileEntityConcreteMixer;
 
 
@@ -35,7 +36,7 @@ public class GuiConcreteMixer extends GuiContainer
     {
         String s = "Concrete Mixer";
         this.fontRenderer.drawString(s, this.xSize / 2 - this.fontRenderer.getStringWidth(s) / 2, 6, 4210752);
-        this.fontRenderer.drawString(I18n.getString("container.inventory"), 8, this.ySize - 96 + 2, 4210752);
+        this.fontRenderer.drawString(I18n.getString("container.inventory"), 8, this.ySize - 96 + 12, 4210752);
     }
 
     /**

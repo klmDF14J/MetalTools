@@ -37,7 +37,7 @@ public class PacketHandler implements IPacketHandler
             int x = reader.readInt();
             int y = reader.readInt();
             int z = reader.readInt();
-            entityPlayer.worldObj.setBlock(x, y, z, Blocks.concrete.blockID);
+            entityPlayer.worldObj.setBlock(x, y, z, Blocks.cement.blockID);
         }
     }
 
