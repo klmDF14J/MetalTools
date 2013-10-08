@@ -1,13 +1,13 @@
 package cc.block;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Icon;
+import net.minecraftforge.fluids.Fluid;
 import cc.Config;
 import cc.ConstructionCraft;
 import cc.block.tileentity.TileEntityConcreteMixer;
 import cc.item.ItemColouredStoneSet;
-import net.minecraft.block.Block;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.Fluid;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
@@ -17,20 +17,21 @@ public class Blocks
     public static Block cement, reinforcedGlass, blacksmithTable, cementFluidBlock, whiteStone, blackStone, ironPlate, wormhole, cementMixer, cementMixerOn;
 
     public static String[] types = {"Stone", "Brick", "Smooth Brick"};
+	public static Icon cementTrackIcon;
 
     private static void create()
     {
         cementFluid = new CementFluid();
         cementFluidBlock = new BlockCementFluid(Config.cementFluidBlock);
-        cement = new BasicBlock(Config.cement).setCreativeTab(ConstructionCraft.blocks).setTextureName(ConstructionCraft.modid + ":concrete");
-        reinforcedGlass = new BlockMetalSupport(Config.reinforcedGlass).setCreativeTab(ConstructionCraft.blocks);
-        blacksmithTable = new BlockBlacksmithTable(Config.blacksmithTable);
-        whiteStone = new BlockColouredStoneSet(Config.whiteStoneSet, "white");
-        blackStone = new BlockColouredStoneSet(Config.blackStoneSet, "black");
-        ironPlate = new BlockMetalPlate(Config.ironPlate).setCreativeTab(ConstructionCraft.blocks);
-        wormhole = new BlockWormhole(Config.wormhole);
-        cementMixer = new BlockConcreteMixer(Config.cementMixer, false);
-        cementMixerOn = new BlockConcreteMixer(Config.cementMixerOn, true);
+        cement = new BasicBlock(Config.cement).setCreativeTab(ConstructionCraft.blocks).setTextureName(ConstructionCraft.modid + ":concrete").setHardness(2F);
+        reinforcedGlass = new BlockMetalSupport(Config.reinforcedGlass).setCreativeTab(ConstructionCraft.blocks).setHardness(2F);
+        blacksmithTable = new BlockBlacksmithTable(Config.blacksmithTable).setHardness(2F);
+        whiteStone = new BlockColouredStoneSet(Config.whiteStoneSet, "white").setHardness(2F);
+        blackStone = new BlockColouredStoneSet(Config.blackStoneSet, "black").setHardness(2F);
+        ironPlate = new BlockMetalPlate(Config.ironPlate).setCreativeTab(ConstructionCraft.blocks).setHardness(2F);
+        wormhole = new BlockWormhole(Config.wormhole).setHardness(2F);
+        cementMixer = new BlockConcreteMixer(Config.cementMixer, false).setHardness(2F);
+        cementMixerOn = new BlockConcreteMixer(Config.cementMixerOn, true).setHardness(2F);
     }
 
     private static void register()

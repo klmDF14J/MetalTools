@@ -23,6 +23,7 @@ public class BlockBlacksmithTable extends Block
         setUnlocalizedName("" + Items.lastNum++);
     }
 
+
     @Override
     public boolean isOpaqueCube()
     {
@@ -48,6 +49,7 @@ public class BlockBlacksmithTable extends Block
     @SideOnly(Side.CLIENT)
     public void registerIcons(IconRegister icon)
     {
+    	Blocks.cementTrackIcon = icon.registerIcon(ConstructionCraft.modid + ":cementTrack");
         side = icon.registerIcon(ConstructionCraft.modid + ":blacksmithTableSide");
         bottom = icon.registerIcon(ConstructionCraft.modid + ":blacksmithTableBottom");
         topNormal = icon.registerIcon(ConstructionCraft.modid + ":blacksmithTableTopNormal");
